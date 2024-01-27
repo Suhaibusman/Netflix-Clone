@@ -12,7 +12,9 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     HomeController homeController = Get.put(HomeController());
+    final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
     return Scaffold(
+      key: _scaffoldKey,
       backgroundColor: Colors.black,
       body: SingleChildScrollView(
         child: Column(
@@ -35,7 +37,11 @@ class HomeScreen extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Image.asset(ImageConstants.netflixIcon),
+                          InkWell(
+                              onTap: () {
+                                _scaffoldKey.currentState!.openDrawer();
+                              },
+                              child: Image.asset(ImageConstants.netflixIcon)),
                           SizedBox(width: Get.width * 0.06),
                           ctext(
                               text: "TV Shows",

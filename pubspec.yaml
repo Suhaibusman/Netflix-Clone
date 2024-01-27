@@ -38,6 +38,7 @@ dependencies:
   get: ^4.6.6
   google_fonts: ^6.1.0
   auto_size_text: ^3.0.0
+  url_launcher: ^6.2.4
 
 dev_dependencies:
   flutter_test:
