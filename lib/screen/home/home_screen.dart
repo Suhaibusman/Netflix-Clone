@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:netflix_clone/utils/constant/app_constant.dart';
 import 'package:netflix_clone/utils/constant/image_constant.dart';
 import 'package:netflix_clone/utils/widgets/text_widget.dart';
 
@@ -8,38 +10,126 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.5,
-            width: MediaQuery.of(context).size.width,
-            child: Stack(
-              children: [
-                Image.asset(
-                  ImageConstants.homeMovie,
-                  fit: BoxFit.cover,
-                  height: MediaQuery.of(context).size.height * 0.5,
-                  width: MediaQuery.of(context).size.width,
-                ),
-                Positioned(
-                    top: 50,
-                    left: 10,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Image.asset(ImageConstants.netflixIcon),
-                        const SizedBox(width: 16),
-                        ctext(text: "TV Shows", color: Colors.white),
-                        const SizedBox(width: 16),
-                        ctext(text: "Movies", color: Colors.white),
-                        const SizedBox(width: 16),
-                        ctext(text: "My List", color: Colors.white),
-                      ],
-                    ))
-              ],
+      backgroundColor: Colors.black,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.5,
+              width: MediaQuery.of(context).size.width,
+              child: Stack(
+                children: [
+                  Image.asset(
+                    ImageConstants.homeMovie,
+                    fit: BoxFit.cover,
+                    height: MediaQuery.of(context).size.height * 0.5,
+                    width: MediaQuery.of(context).size.width,
+                  ),
+                  Positioned(
+                      top: 50,
+                      left: 10,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Image.asset(ImageConstants.netflixIcon),
+                          SizedBox(width: Get.width * 0.06),
+                          ctext(
+                              text: "TV Shows",
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16),
+                          SizedBox(width: Get.width * 0.1),
+                          ctext(
+                              text: "Movies",
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16),
+                          SizedBox(width: Get.width * 0.1),
+                          ctext(
+                              text: "My List",
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16),
+                        ],
+                      ))
+                ],
+              ),
             ),
-          )
-        ],
+            Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(ImageConstants.top10icon),
+                  extraSmallSpacew,
+                  ctext(
+                      text: "#2 in Pakistan Today",
+                      color: Colors.white,
+                      fontSize: 13,
+                      fontWeight: FontWeight.bold)
+                ],
+              ),
+            ),
+            SizedBox(height: Get.height * 0.02),
+            Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  SizedBox(
+                    height: 45,
+                    width: 60,
+                    child: Column(
+                      children: [
+                        const Icon(Icons.add, color: Colors.white),
+                        ctext(
+                            text: "My List",
+                            color: Colors.white,
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold)
+                      ],
+                    ),
+                  ),
+                  Container(
+                    height: 45,
+                    width: 110,
+                    decoration: BoxDecoration(
+                        color: const Color(0xffC4C4C4),
+                        borderRadius: BorderRadius.circular(5)),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Icon(Icons.play_arrow, color: Colors.black),
+                        ctext(
+                            text: "Play",
+                            color: Colors.black,
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold)
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 45,
+                    width: 60,
+                    child: Column(
+                      children: [
+                        const Icon(Icons.info_outline, color: Colors.white),
+                        ctext(
+                            text: "Info",
+                            color: Colors.white,
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold)
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+            ctext(
+                text: "Previews",
+                color: Colors.white,
+                fontSize: 26,
+                fontWeight: FontWeight.bold)
+          ],
+        ),
       ),
     );
   }

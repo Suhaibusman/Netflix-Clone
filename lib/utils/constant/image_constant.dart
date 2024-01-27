@@ -2,7 +2,7 @@ abstract class ImageConstants {
   static const netflixLogo = 'assets/netflixlogo.png';
   static const netflixIcon = 'assets/netflixicon.png';
   static const homeMovie = 'assets/homeMovie.png';
-  static const ellipseBottom = 'assets/images/ellipsebottom.png';
+  static const top10icon = 'assets/top10logo.png';
   static const monocrystalineImage = 'assets/images/monocrystaline.png';
   static const polycrystallineImage = 'assets/images/polycrystalline.png';
   static const thinFilmImage = 'assets/images/thin-film.png';
