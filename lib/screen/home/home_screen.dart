@@ -4,6 +4,7 @@ import 'package:netflix_clone/controller/home_controller/home_controller.dart';
 import 'package:netflix_clone/screen/home/mylist_screen.dart';
 import 'package:netflix_clone/utils/constant/app_constant.dart';
 import 'package:netflix_clone/utils/constant/image_constant.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:netflix_clone/utils/widgets/text_widget.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -16,6 +17,116 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       key: _scaffoldKey,
       backgroundColor: Colors.black,
+      drawer: Drawer(
+        backgroundColor: Colors.black,
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: Color(0xffDB202C),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Center(
+                    child: CircleAvatar(
+                      radius: 40,
+                      backgroundImage: NetworkImage(
+                        'https://media.licdn.com/dms/image/D5603AQEm8gqDfvzrBA/profile-displayphoto-shrink_800_800/0/1689103165548?e=2147483647&v=beta&t=g7TaydPxRthr2NDcvMNIKXHSoi_r2UvYz8FYKz3BuFI',
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  Center(
+                    child: Text(
+                      'Developed By Muhammad Suhaib',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            ListTile(
+              leading: Image.network(
+                'https://img.icons8.com/color/48/000000/portfolio.png', // Portfolio icon
+                height: 24,
+                width: 24,
+              ),
+              title: ctext(
+                  text: 'Click to See Portfolio' + ' ' + '👈',
+                  color: Colors.white),
+              onTap: () {
+                // Handle portfolio tap
+                launch('https://suhaibportfolio.vercel.app/');
+              },
+            ),
+            ListTile(
+              leading: Image.network(
+                'https://img.icons8.com/color/48/000000/gmail.png', // Gmail icon
+                height: 24,
+                width: 24,
+              ),
+              title:
+                  ctext(text: 'suhaibusman54@gmail.com', color: Colors.white),
+              onTap: () {
+                launch('mailto:suhaibusman54@gmail.com');
+                // Handle email tap
+              },
+            ),
+            ListTile(
+              leading: Image.network(
+                'https://img.icons8.com/color/48/000000/whatsapp.png', // WhatsApp icon
+                height: 24,
+                width: 24,
+              ),
+              title: ctext(color: Colors.white, text: ' 03112136120'),
+              onTap: () {
+                launch(
+                    'https://api.whatsapp.com/send?phone=+923112136120&text=Hello,%20Suhaib%20See%20Your%20GeminiAiApp');
+                // Handle contact tap
+              },
+            ),
+            ListTile(
+              leading: Image.network(
+                'https://img.icons8.com/color/48/000000/linkedin.png', // LinkedIn icon
+                height: 24,
+                width: 24,
+              ),
+              title: ctext(text: 'Muhammad Suhaib Usman', color: Colors.white),
+              onTap: () {
+                launch('https://www.linkedin.com/in/suhaibusman/');
+              },
+            ),
+            ListTile(
+              leading: Image.network(
+                'https://img.icons8.com/color/48/000000/instagram.png', // Instagram icon
+                height: 24,
+                width: 24,
+              ),
+              title: ctext(color: Colors.white, text: 'suhaib__usman'),
+              onTap: () {
+                launch('https://instagram.com/suhaib__usman');
+              },
+            ),
+            ListTile(
+              leading: Image.network(
+                'https://img.icons8.com/color/48/000000/facebook-new.png', // Facebook icon
+                height: 24,
+                width: 24,
+              ),
+              title: ctext(color: Colors.white, text: 'Muhammad Suhaib'),
+              onTap: () {
+                launch('https://www.facebook.com/MuhammadSuhaib0/');
+              },
+            ),
+          ],
+        ),
+      ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
