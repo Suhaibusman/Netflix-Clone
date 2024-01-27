@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:netflix_clone/controller/home_controller/home_controller.dart';
 import 'package:netflix_clone/utils/constant/app_constant.dart';
 import 'package:netflix_clone/utils/constant/image_constant.dart';
 import 'package:netflix_clone/utils/widgets/text_widget.dart';
@@ -9,10 +10,12 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    HomeController homeController = Get.put(HomeController());
     return Scaffold(
       backgroundColor: Colors.black,
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.5,
@@ -123,11 +126,32 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-            ctext(
-                text: "Previews",
-                color: Colors.white,
-                fontSize: 26,
-                fontWeight: FontWeight.bold)
+            Padding(
+              padding: const EdgeInsets.only(left: 20, top: 40),
+              child: ctext(
+                  text: "Previews",
+                  color: Colors.white,
+                  fontSize: 26,
+                  fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: Get.height * 0.2,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: homeController.previewImages.length,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: CircleAvatar(
+                      radius: 50,
+                      child: Image.asset(
+                        homeController.previewImages[index],
+                      ),
+                    ),
+                  );
+                },
+              ),
+            )
           ],
         ),
       ),
