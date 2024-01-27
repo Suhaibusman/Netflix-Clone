@@ -115,7 +115,6 @@ class HomeController extends GetxController {
 
   List netflixOrignal = [
     "assets/movies/n1.png",
-    "assets/movies/n2.png",
     "assets/movies/h1.png",
     "assets/movies/h2.png",
     "assets/movies/h3.png",

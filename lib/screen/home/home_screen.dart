@@ -152,6 +152,202 @@ class HomeScreen extends StatelessWidget {
                 },
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 20,
+              ),
+              child: ctext(
+                  text: "Popular on Netflix",
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: Get.height * 0.2,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: homeController.popularonNetflix.length,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: CircleAvatar(
+                      radius: 50,
+                      child: Image.asset(
+                        homeController.popularonNetflix[index],
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 20,
+              ),
+              child: ctext(
+                  text: "Trending Now",
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: Get.height * 0.2,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: homeController.trendingNow.length,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: CircleAvatar(
+                      radius: 50,
+                      child: Image.asset(
+                        homeController.trendingNow[index],
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 20,
+              ),
+              child: ctext(
+                  text: "Top 10 in Pakistan Today",
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: Get.height * 0.2,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: homeController.top10inpak.length,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: CircleAvatar(
+                      radius: 50,
+                      child: Image.asset(
+                        homeController.top10inpak[index],
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 20,
+              ),
+              child: ctext(
+                  text: "My List",
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: Get.height * 0.2,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: homeController.myList.length,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: CircleAvatar(
+                      radius: 50,
+                      child: Image.asset(
+                        homeController.myList[index],
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 20,
+              ),
+              child: ctext(
+                  text: "African Movies",
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: Get.height * 0.2,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: homeController.africanMovies.length,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: CircleAvatar(
+                      radius: 50,
+                      child: Image.asset(
+                        homeController.africanMovies[index],
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 20,
+              ),
+              child: ctext(
+                  text: "Hollywood Movies & TV Shows",
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: Get.height * 0.2,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: homeController.hollyWoodMovies.length,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: CircleAvatar(
+                      radius: 50,
+                      child: Image.asset(
+                        homeController.hollyWoodMovies[index],
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 20,
+              ),
+              child: ctext(
+                  text: "Watch it Again",
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: Get.height * 0.25,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: homeController.netflixOrignal.length,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: CircleAvatar(
+                      radius: 50,
+                      child: Image.asset(
+                        homeController.netflixOrignal[index],
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
           ],
         ),
       ),
