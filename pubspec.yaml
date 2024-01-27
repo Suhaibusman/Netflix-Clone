@@ -66,6 +66,7 @@ flutter:
     - assets/
     - assets/accountimage/
     - assets/previewimages/
+    - assets/movies/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
