@@ -43,12 +43,18 @@ class MyListScreen extends StatelessWidget {
                       crossAxisCount: 3),
                   itemCount: myListController.myList.length,
                   itemBuilder: (context, index) {
-                    return SizedBox(
-                      height: 161,
+                    return Container(
+                      height: 250,
                       width: Get.width / 3 - 10,
-                      child: Image.asset(
-                        myListController.myList[index],
-                      ),
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image: AssetImage(myListController.myList[index]),
+                              fit: BoxFit.cover)),
+
+                      // child: Image.asset(
+                      //   fit: BoxFit.cover,
+                      //   myListController.myList[index],
+                      // ),
                     );
                   },
                 ),
