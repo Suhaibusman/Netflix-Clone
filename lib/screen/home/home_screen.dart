@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:netflix_clone/controller/home_controller/home_controller.dart';
+import 'package:netflix_clone/screen/home/mylist_screen.dart';
 import 'package:netflix_clone/utils/constant/app_constant.dart';
 import 'package:netflix_clone/utils/constant/image_constant.dart';
 import 'package:netflix_clone/utils/widgets/text_widget.dart';
@@ -48,11 +49,16 @@ class HomeScreen extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                               fontSize: 16),
                           SizedBox(width: Get.width * 0.1),
-                          ctext(
-                              text: "My List",
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16),
+                          InkWell(
+                            onTap: () {
+                              Get.to(const MyListScreen());
+                            },
+                            child: ctext(
+                                text: "My List",
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16),
+                          ),
                         ],
                       ))
                 ],
@@ -83,11 +89,16 @@ class HomeScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         const Icon(Icons.add, color: Colors.white),
-                        ctext(
-                            text: "My List",
-                            color: Colors.white,
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold)
+                        InkWell(
+                          onTap: () {
+                            Get.to(const MyListScreen());
+                          },
+                          child: ctext(
+                              text: "My List",
+                              color: Colors.white,
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold),
+                        )
                       ],
                     ),
                   ),
